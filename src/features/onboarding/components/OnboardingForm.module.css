@@ -1,0 +1,106 @@
+.card {
+  width: 100%;
+  max-width: 45rem;
+  padding: 2.25rem 2.375rem;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 1.5rem;
+  background: var(--color-surface);
+}
+
+.title {
+  margin: 0 0 1.875rem;
+  font-size: 2.0625rem;
+  font-weight: 400;
+  line-height: 1.2;
+  text-align: center;
+  color: var(--color-text);
+}
+
+/* Sizes and gaps are measured from the mockup (card width 720px). */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.625rem;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 1.875rem;
+  row-gap: 1.625rem;
+}
+
+.submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  min-height: 4rem;
+  margin-top: 0.3125rem;
+  /* Transparent, not none: keeps the button's edge visible in forced-colors mode. */
+  border: 1px solid transparent;
+  border-radius: 0.875rem;
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  font: inherit;
+  font-size: 1.125rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.submit:hover:not([aria-disabled='true']) {
+  background: var(--color-primary-hover);
+}
+
+.submit:focus-visible {
+  outline: 3px solid var(--color-focus-ring);
+  outline-offset: 3px;
+}
+
+.submit[aria-disabled='true'] {
+  cursor: default;
+  opacity: 0.7;
+}
+
+.form[aria-busy='true'] .submit {
+  cursor: progress;
+}
+
+.submitIcon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* First/last name stack on narrow screens: one column is faster to scan and fill on mobile. */
+@media (max-width: 36rem) {
+  .card {
+    padding: 2rem 1.25rem;
+    border-radius: 1rem;
+  }
+
+  .title {
+    font-size: 1.625rem;
+  }
+
+  .row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.formError {
+  margin: 0;
+  font-size: 1.125rem;
+  color: var(--color-error);
+}
+
+.success {
+  display: block;
+  margin: 0;
+  font-size: 1.125rem;
+  text-align: center;
+  color: var(--color-success);
+}
+
+.success:not(:empty) {
+  margin-top: 1.25rem;
+}

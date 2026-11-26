@@ -1,0 +1,64 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1875rem;
+  min-width: 0;
+}
+
+.label {
+  font-weight: 500;
+  font-size: 1.125rem;
+  color: var(--color-text);
+}
+
+.input {
+  width: 100%;
+  min-height: 3.875rem;
+  padding: 0 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.75rem;
+  background: var(--color-surface);
+  color: var(--color-text);
+  /* 16px+ prevents iOS Safari from zooming into the field on focus. */
+  font: inherit;
+  font-size: 1rem;
+  transition:
+    border-color 120ms ease,
+    box-shadow 120ms ease;
+}
+
+.input:hover {
+  border-color: var(--color-border-strong);
+}
+
+.input:focus-visible {
+  /* Invisible normally; forced-colors mode drops box-shadow but paints this outline. */
+  outline: 2px solid transparent;
+  border-color: var(--color-text);
+  box-shadow: 0 0 0 3px var(--color-focus-ring);
+}
+
+.input[aria-invalid='true'] {
+  border-color: var(--color-error);
+}
+
+.input[aria-invalid='true']:focus-visible {
+  box-shadow: 0 0 0 3px var(--color-error-ring);
+}
+
+.input:read-only {
+  background: var(--color-surface-muted);
+  cursor: default;
+}
+
+.error {
+  margin: 0.1875rem 0 0;
+  font-size: 1.125rem;
+  color: var(--color-error);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .input {
+    transition: none;
+  }
+}

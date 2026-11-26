@@ -1,0 +1,42 @@
+:root {
+  /* Colors sampled from the provided design. */
+  --color-text: #111111;
+  --color-background: #f8f8f8;
+  --color-surface: #ffffff;
+  --color-surface-muted: #f3f3f3;
+  --color-border-subtle: #e8e8e8;
+  --color-border: #d2d2d2;
+  --color-border-strong: #b5b5b5;
+  --color-primary: #000000;
+  --color-primary-hover: #262626;
+  --color-on-primary: #ffffff;
+  --color-error: #ea3323;
+  --color-error-ring: rgb(234 51 35 / 20%);
+  --color-success: #1b6e3c;
+  --color-focus-ring: rgb(17 17 17 / 25%);
+
+  font-family:
+    'DM Sans',
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    sans-serif;
+  line-height: 1.5;
+  color: var(--color-text);
+  background: var(--color-background);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--color-background);
+}

@@ -1,0 +1,56 @@
+{
+  "name": "onboarding-assessment",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "npm run css:types && vite",
+    "build": "npm run typecheck && vite build",
+    "typecheck": "npm run css:types && tsc -b",
+    "css:types": "node scripts/generate-css-module-types.ts",
+    "lint": "oxlint --deny-warnings",
+    "knip": "knip",
+    "knip:production": "knip --production",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check",
+    "test": "vitest run",
+    "test:watch": "vitest watch",
+    "test:coverage": "vitest run --coverage",
+    "preview": "vite preview",
+    "test:mutation": "stryker run",
+    "check": "npm run typecheck && npm run lint && npm run knip && npm run format:check && npm test && vite build"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "7.0.9",
+    "libphonenumber-js": "1.13.17",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "react-hook-form": "7.92.0",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@stryker-mutator/api": "10.1.1",
+    "@stryker-mutator/core": "10.1.1",
+    "@stryker-mutator/vitest-runner": "10.1.1",
+    "@testing-library/dom": "10.4.2",
+    "@testing-library/jest-dom": "8.0.0",
+    "@testing-library/react": "16.3.3",
+    "@testing-library/user-event": "14.6.13",
+    "@types/node": "24.19.2",
+    "@types/react": "19.3.2",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.3.0",
+    "@vitest/coverage-v8": "5.1.2",
+    "jsdom": "31.0.1",
+    "knip": "6.48.0",
+    "msw": "3.0.7",
+    "oxlint": "1.95.0",
+    "prettier": "3.10.1",
+    "typescript": "7.0.2",
+    "vite": "8.3.8",
+    "vitest": "5.1.2"
+  },
+  "engines": {
+    "node": "^22.18.0 || >=24.0.0"
+  }
+}
